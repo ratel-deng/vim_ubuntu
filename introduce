@@ -1,0 +1,4 @@
+vim 是功能强大的文本编辑器
+vi 是EX的可视化窗口
+vim是vi的加强版，增加了更多功能，更容易操作，更稳定
+行号配置：在/etc/vim/vimrc的最后一行加入EX命令set number
