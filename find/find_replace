@@ -1,0 +1,11 @@
+正向查找：/关键字（按n可以查找下一个）
+反向查找：?关键字（按n可以查找下一个）
+高亮显示：在命令模式下输入set hls；放在/etc/vim/vimrc里永久生效；n查找下一个
+查找替换：
+	:s/old/new当前行的第一个old替换为new
+	:s/old/new/g当前行的所有old替换为new
+	:57s/old/new/g将57行的所有old替换为new
+	:57,60s/old/new/g将57至60行的所有old替换为new
+	:%s/old/new/g将文本的所有old替换为new
+	:%s/old/new/gc将文本的所有old可选择的替换为new
+	:%s/^old/new/g将文本的所有行首old替换为new
