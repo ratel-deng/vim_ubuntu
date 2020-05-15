@@ -1,0 +1,49 @@
+在vi时输入:Q进入EX模式
+在EX时输入:vi进入vi模式
+EX命令例子
+	:1q 打印第一行代码
+	:1,10q 打印1~10行代码
+
+vim启动过程：
+1，设置内部变量SHELL和term
+2，处理命令行参数：包括选项和要打开的文件名
+3，加载系统级和用户级的配置文件(/etc/vim/vimrc与~/.vim/vimrc，用户级配置文件要自己键)
+4，加载插件并执行
+5，执行GUI部分的初始化
+6，如果viminfo不为空，则读取viminfo文件，恢复上次的编译环境
+7，打开显示所有窗口
+8，执行用户指定的启动时命令
+
+vim常用配置（注意先备份）
+"号是注释
+:set nocompatible 不兼容vi，可以使用方向键和退格键
+:set number 显示行号（同:set nu）
+:set background=dark 背景暗色
+:syntax on 语法检测
+:set shiftwidth=4 4格缩进
+:set autoindent 自动缩进
+{	:filetype on 文件自动检测
+	:filetype plugin on 
+	:filetype indent on	}
+:set cursorline 光标显示行线
+:set backspace=2 窗口之间的宽度
+:set nobackup 禁止生成临时文件
+:set noswapfile 禁止生成交换文件
+:set autoread 自动读
+:set autowrite 自动写（自动保存）
+:set ignorecase 搜索忽略大小写
+{	:set hlsearch 搜索字符高亮 
+	:set incsearch	}
+{	:set enc=utf-8 编码设置
+	:set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936	}
+{	:set langmenu=zh_CN.UTF-8 语言设置 
+	:set helplang=cn	}
+{	:set mouse=a 鼠标设置
+	:set selection=exclusive
+	:set selectmode=mouse,key
+  可以在buffer的任何地方使用鼠标，类似office中在工作区双击鼠标定位
+}
+:set report=0 通过使用:commands命令告诉我们文件那一行被改变过
+:set fillchars=vert:\ ,stl:\ ,stlnc:\ 在被分割的窗口显示空白，便于阅读
+:colorscheme murphy 主题设置 
+注意：在vimrc文件里不用加:
