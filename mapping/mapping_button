@@ -1,0 +1,59 @@
+示例：
+	:map \ yy
+	在普通模式，可视化模式，操作符运算模式下输入\和输入yy的效果一样
+	:inoremap <tab> s
+	在普通模式按Tab键和输入s的效果一样，并且禁止重映射
+	:verbose map \
+	查看该映射
+	:verbose map
+	查看全部映射
+映射有效范围：
+	:map 普通模式，可视化模式，操作符运算模式
+	:map! 插入模式，命令行模式
+	:nmap 仅普通模式
+	:vmap 仅可视化模式
+	:omap 仅操作符运算模
+	:imap 仅插入模式
+	:cmap 仅命令行模式
+组合键映射：
+	:nmap <C-q> ) 此时在普通模式按下Ctrl+q等于按下)
+	:nmap <C-A-q> ( 此时普通模式按下Ctrl+Alt+q等于按下(
+	键盘上对应的键在映射的列举：
+	<a>等于a键
+	<tab>等于Tab键
+	<CR>等于Enter键
+	<F3>等于F3功能键
+	<Esc>等于Esc键
+	<LEFT>、<RIGHT>、<UP>、<DOWN>分别等于左右上下方向键
+	<DELETE>等于Delete键
+	<BS>等于Backspace退格键
+	<Space>等于空格键
+
+插入模式下的括号，引号自动补全：
+	:inoremap ( ()<Esc>i
+	:inoremap ) ()<Esc>i
+	在插入模式下输入(或)时，补全为()在括号中间进入插入模式且不能重映射
+	其它括号的映射方式同理
+	:inoremap { {<CR><CR>}<UP><tab>
+	:inoremap } {<CR><CR>}<UP><tab>
+	在插入模式下输入{或}时，补全为{}在中间进入插入模式换行缩进且不能重映射
+	注意：自动缩进要自己配置:set autoindent
+
+代码行的移动：
+	:nnoremap <C-UP> dd2kp
+	:nnoremap <C-DOWN> ddp
+	在普通模式下代码行的上下移动(我这里是小键盘，Crtl+方向十分方便)
+
+在插入模式下的光标移动：
+	:inoremap <C-w> <Esc>wa
+	:inoremap <C-b> <Esc>wa
+	获得在插入模式下与普通模式同样的功能
+
+编译功能：
+	:map <F5> make&&./file
+	编译并运行
+内建命令：
+	vim在不同模式下都有内建命令，如普通模式下的hjkl，命令行模式的保存和退出
+	但插入模式是例外，只是单纯的输入字符，我们可以通过map映射自定义命令
+	注意：不要覆盖vim原来的内建命令
+
