@@ -1,0 +1,39 @@
+源码包下载：
+	http://cscope.sourceforge.net/ 下载地址
+编译安装：
+	三步走 ./configure 生成makefile文件
+		make  编译
+		make install 安装
+配置查找方式：
+	在/etc/vim/vimrc配置
+	set cscopequickfix=s-,c-,d-,i-,t-,e-
+生成cscope符号表数据库：
+	在项目目录的顶层运行 #cscope -Rbq
+测试运行：
+	#cscope -Rk
+	Find this C symbol: 查找c定义
+	Find this global definition: 查找全局定义
+	Find functions called by this function: 查找一个函数调用了哪些函数
+	Find functions calling this function: 查找一个函数被哪些函数调用了
+	Find this text string: 查找文本字符串
+	Change this text string: 查找文本替换字符串
+	Find this egrep pattern: 按照egrep模式查找 
+	Find this file: 查找源文件
+	Find files #including this file: 
+	Find assignments to this symbol:
+	查找到结果后，按方向键上下移动，Tab键切换查找结果与查找选项，空格键是查找结果翻页（我只发现了向下翻页，包括括号在内，都只可以向下翻页）
+	Ctrl+d退出查找
+
+		与vim一起使用
+添加到vim中：
+	:cs add /home/项目路径/cscope.out /home/项目路径/
+常用查找命令：
+	模式	:cs find g string(函数名，文件名，c符号)
+	参数含义 g查找定义
+		 s查找c符号
+		 d查找本函数调用的函数
+		 c查找调用本函数的函数
+		 t查找字符串
+		 f查找文件
+使用quickfix进行位置列表显示及跳转：
+	:cw 打开quickfix对结果进行预览
