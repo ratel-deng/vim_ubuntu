@@ -1,0 +1,18 @@
+c语言插件c.vim
+地址 https://www.vim.org/scripts/download_script.php?src_id=9679
+安装：
+	unzip cvim.zip
+	cp doc/csupport.txt ~/.vim/doc/
+	cp plugin/c.vim ~/.vim/plugin/
+	cp -r ftplugin/ ~/.vim/
+	cp -r c-support/ ~/.vim/
+常用命令：
+	\hp 帮助文档
+	\im 插入main函数
+	\if 插入函数
+	\rc 保存编译
+	\rr 运行程序
+
+可以更具手册，修改插入的内容
+比如：\sd插入do{}while，在手册在中属于statements表，在~/.vim/c-support/templates/中找到c.statements.template文件，对其进行修改
+	
