@@ -14,7 +14,7 @@
 功能键设置：
 	在vimrc添加 set cscopequickfix=s-,c-,d-,i-,t-,e-配置查找方式
 	:map <F6>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-	“<F6>i” 组合键 按F6键后要快速按s
+	“<F6>i” 组合键 按F6键后要快速按i
 	“:cs find i”查找c符号的cscope命令
 	“^”过滤掉前面不符合规则的数据
 	“<C-R>”寄存器

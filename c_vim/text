@@ -1,11 +1,13 @@
 c语言插件c.vim
-地址 https://www.vim.org/scripts/download_script.php?src_id=9679
-安装：
-	unzip cvim.zip
+地址 https://www.vim.org/scripts/download_script.php?src_id=213
+解压：unzip
+拷贝：
 	cp doc/csupport.txt ~/.vim/doc/
 	cp plugin/c.vim ~/.vim/plugin/
 	cp -r ftplugin/ ~/.vim/
 	cp -r c-support/ ~/.vim/
+	...
+	将对应文件夹拷贝到~/.vim
 常用命令：
 	\hp 帮助文档
 	\im 插入main函数
