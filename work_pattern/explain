@@ -1,5 +1,0 @@
-普通模式：common.PNG，按esc键实现，是各个模式的切换中转
-输入模式：input.PNG，按i或a键实现，o键插入行
-命令行模式：command.PNG，按:键实现，可输入EX命令
-可视化模式：visual.PNG，按v键实现，选中一块区域，进行复制，粘贴等操作
-替换模式：replace.PNG，按shift+r键实现，替换光标处文本
