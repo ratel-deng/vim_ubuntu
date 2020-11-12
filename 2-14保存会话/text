@@ -1,0 +1,15 @@
+保存会话
+会话信息是指：当前编辑环境的空窗口、所有缓冲区、当前目录、折叠的相关信息、帮助窗口、所有选项和按键映射、所有的标签页、窗口大小
+命令行状态下:mksession 文件名.vim 生成一个保存会话文件，没有文件名时，默认以Session.vim文件名创建保存会话文件
+注：当已经存在该文件时，需要执行:mksession!命令强制执行创建新文件覆盖原文件
+打开方式：
+	vim启动后在命令行模式输入:source Session.vim
+	在启动时#vim -S Session.vim
+
+保存和加载viminfo信息
+viminfo信息是指：包括命令行历史、搜索历史、缓冲区列表，非空寄存器内容、全局变量、最近搜索/替换模式等
+保存viminfo信息：
+	:wviminfo 文件名.viminfo
+	在当前目录将viminfo信息保存在.viminfo文件
+恢复viminfo信息：
+	:rviminfo 文件名.viminfo

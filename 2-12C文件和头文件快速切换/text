@@ -1,0 +1,11 @@
+c文件和头文件的快速切换
+插件下载：
+地址 https://www.vim.org/scripts/download_script.php?src_id=31
+
+使用：
+	:A 在buffer中切换c/h文件
+	:AS 横向分割窗口同时显示c/h文件
+	:AV 纵向分割窗口同时显示c/h文件
+	:AT 新建一个标签页打开文件
+	切换标签页 gt/gT
+

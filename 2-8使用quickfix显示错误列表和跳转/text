@@ -1,0 +1,38 @@
+常用命令：
+	:cc 显示详细错误信息
+	:cp 跳到上一个错误
+	:cn 跳到下一个错误
+	:cl 列出所有错误
+	:cw 如果有错误列表则打开，quickfix窗口
+	:col 到前一个错误列表
+	:cnew 到新的一个错误列表
+	注意：这里的列表不一定是错误信息，也可以是搜索结果
+按键映射设置快捷键：
+	:map <F6> :cw<CR>
+	:map <F3> :cp<CR>
+	:map <F4> :cn<CR>
+功能键设置：
+	在vimrc添加 set cscopequickfix=s-,c-,d-,i-,t-,e-配置查找方式
+	:map <F6>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+	“<F6>i” 组合键 按F6键后要快速按i
+	“:cs find i”查找c符号的cscope命令
+	“^”过滤掉前面不符合规则的数据
+	“<C-R>”寄存器
+	“=expand()”函数
+	“"<cfile>"”光标处文件名
+	“<CR>”等于按下Enter键，执行^<C-R>=expand("<cfile>")
+	“$”过滤掉后面不符合规则的数据
+	“<CR>”等于按下Enter键，执行cscope命令
+	其它列举
+	:map <F6>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+	:map <F6>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+	:map <F6>c :cs find c <C-R>=expand("<cword>")<CR><CR> :cw<CR> 形成列表
+	:map <F6>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+	:map <F6>e :cs find e <C-R>=expand("<cword>")<CR><CR> 查找egrep模式
+	:map <F6>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+	:map <F6>d :cs find d <C-R>=expand("<cfile>")<CR><CR> <F6>g
+自动编译并显示错误列表：
+	:map <F5> :make<CR><CR><CR> :cw<CR>
+	编译之后，打开quickfix列表
+	
+
